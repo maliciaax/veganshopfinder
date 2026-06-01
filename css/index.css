@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { 
+    overflow-y: scroll !important; 
+}
+
+body {
+    margin: 0; padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(38, 38, 38);
+    color: #f3f3f3;
+}
+
+/* ── SKIP LINK (RGAA) ── */
+.skip-link {
+    position: absolute; 
+    top: -100px; 
+    left: 1rem;
+    background: #578040; 
+    color: #fff;
+    padding: 0.5rem 1rem; 
+    border-radius: 0 0 0.5rem 0.5rem;
+    text-decoration: none; 
+    font-weight: 600; 
+    z-index: 9999;
+    transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
+
+/* ── NAV ── */
+nav {
+    display: flex; 
+    align-items: center;
+    position: sticky; 
+    top: 0; 
+    z-index: 100;
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem;
+    background-color: rgb(46, 46, 46);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.navlink {
+    display: flex; 
+    gap: 1.5rem;
+    list-style: none; 
+    margin: 0; 
+    padding: 0;
+}
+nav a { 
+    text-decoration: none; 
+    color: #f3f3f3; 
+}
+nav a:hover, nav a:focus { 
+    color: #86b86a; 
+    outline: none; }
+nav a:focus-visible { 
+    outline: 2px solid #86b86a; 
+    border-radius: 3px; }
+.imgLogo { 
+    width: 13rem; 
+}
+
+/* ── BOUTON ── */
+.boutonLogin {
+    background-color: #578040;
+    padding: 0.45rem 1.1rem;
+    border-radius: 0.5rem;
+    color: #f3f3f3;
+    border: none; cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem; font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+.boutonLogin:hover { 
+    background-color: rgb(70,106,50); 
+    color: #f3f3f3!important;
+}
+.boutonLogin:focus-visible { 
+    outline: 2px solid #f3f3f3; 
+    outline-offset: 2px; 
+}
+#filtre .boutonLogin.actif {
+    background-color: rgb(70,106,50);
+    outline: 2px solid #f3f3f3;
+}
+
+/* ── HERO (index.php) ── */
+.hero {
+    min-height: calc(100vh - 60px);
+    background: linear-gradient(135deg, rgba(30,50,20,0.85) 0%, rgba(38,38,38,0.92) 100%),
+                url('../img/hero-bg.jpg') center/cover no-repeat;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center; 
+    padding: 2rem;
+}
+.hero-overlay { 
+    max-width: 600px; 
+}
+.hero-titre {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700; 
+    color: #f3f3f3; 
+    margin: 0 0 0.75rem;
+}
+.hero-sous-titre {
+    font-size: 1.1rem; 
+    color: #c8e6b0; 
+    margin: 0 0 2rem;
+}
+.hero-form {
+    display: flex; 
+    gap: 0.75rem; 
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.hero-select {
+    padding: 0.6rem 1.2rem; 
+    border-radius: 0.5rem; 
+    border: none;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1rem;
+    background: #f3f3f3; 
+    color: #222; 
+    cursor: pointer;
+    min-width: 200px;
+}
+.hero-select:focus-visible { 
+    outline: 2px solid #86b86a; 
+}
+
+/* ── MAGASIN PAGE ── */
+.filtres-bar {
+    background: rgb(46,46,46);
+    padding: 1rem 2rem;
+    display: flex; 
+    gap: 1.5rem; 
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.select-ville {
+    padding: 0.5rem 1rem; 
+    border-radius: 2rem; 
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    background: #578040; 
+    color: #f3f3f3;
+    cursor: pointer; 
+    font-weight: 500;
+}
+.select-ville:focus-visible { 
+  outline: 2px solid #f3f3f3;
+}
+
+#filtre { 
+    display: flex; 
+    gap: 0.5rem; 
+    flex-wrap: wrap; 
+}
+
+#recherche {
+    padding: 0.5rem 1.2rem; 
+    border-radius: 2rem; 
+    border: none;
+    background: #f3f3f3; 
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+#recherche:focus-visible { 
+    outline: 2px solid #578040; 
+}
+
+.main { 
+    padding: 2rem; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.magasin {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit; /* garde la couleur du texte */
+}
+
+#magasinsListe { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.5rem; 
+}
+
+.magasin {
+    display: flex; 
+    flex-direction: row;
+    align-items: center; 
+    gap: 1.5rem;
+    background-color: rgb(46,46,46);
+    border-radius: 12px; 
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    transition: transform 0.15s;
+}
+
+.magasin:hover { 
+    transform: translateY(-2px); 
+}
+
+.gauche { 
+    flex-shrink: 0; 
+}
+
+.imgMag {
+    width: 250px; height: 170px;
+    object-fit: cover; border-radius: 8px; display: block;
+}
+
+.droit { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.4rem; 
+}
+.droit h3 { 
+    color: #dedede; 
+    font-size: 1.3rem; 
+    font-weight: 600; 
+    margin: 0; 
+}
+.droit p { font-size: 1rem; color: #c8c8c8; margin: 0; }
+.etoiles { color: #f4c430; font-size: 1.1rem; }
+.boutons { display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+
+/* ── MESSAGES ── */
+.msg-erreur {
+    background: rgba(200,50,50,0.15); border-left: 4px solid #c83232;
+    color: #ffaaaa; padding: 0.75rem 1.2rem; margin: 1rem auto;
+    max-width: 600px; border-radius: 0 0.5rem 0.5rem 0;
+}
+.msg-succes {
+    background: rgba(87,128,64,0.2); border-left: 4px solid #578040;
+    color: #c8e6b0; padding: 0.75rem 1.2rem; margin: 1rem auto;
+    max-width: 600px; border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* ── PROFIL ── */
+.profil-champ {
+    display: flex; flex-direction: column; gap: 0.2rem; width: 100%;
+}
+.profil-label { font-size: 0.75rem; color: #86b86a; text-transform: uppercase; letter-spacing: 0.08em; }
+.profil-valeur { font-size: 1rem; color: #f3f3f3; font-weight: 500; }
+
+/* ── SCREEN READER ONLY (RGAA) ── */
+.sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+    .magasin { flex-direction: column; align-items: flex-start; }
+    .imgMag { width: 100%; height: 180px; }
+    .filtres-bar { flex-direction: column; align-items: flex-start; }
+    .hero-form { flex-direction: column; align-items: center; }
+}
