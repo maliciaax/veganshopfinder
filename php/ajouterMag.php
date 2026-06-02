@@ -14,7 +14,6 @@ $numMag    = trim($_POST["numMag"] ?? '');
 $mailMag   = trim($_POST["mailMag"] ?? '');
 $latitude  = trim($_POST["latitude"] ?? '');
 $longitude = trim($_POST["longitude"] ?? '');
-$altitude  = trim($_POST["altitude"] ?? '');
 $imgSrc    = trim($_POST["imgSrc"] ?? '');
 $idGerant  = (int)$_SESSION['id'];
 
@@ -22,8 +21,8 @@ if (empty($nomMag)||empty($ville)||empty($adresse)||empty($codePostal)||empty($n
     header('Location: ../ajouterMagForm.php?erreur=champs'); exit();
 }
 
-$req = $conn->prepare("INSERT INTO magasin (nomMag, ville, adresse, codePostal, numMag, mailMag, latitude, longitude, altitude, id, imgSrc) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-$req->bind_param("ssssssdddis", $nomMag, $ville, $adresse, $codePostal, $numMag, $mailMag, $latitude, $longitude, $altitude, $idGerant, $imgSrc);
+$req = $conn->prepare("INSERT INTO magasin (nomMag, ville, adresse, codePostal, numMag, mailMag, latitude, longitude, id, imgSrc) VALUES (?,?,?,?,?,?,?,?,?,?)");
+$req->bind_param("ssssssddis", $nomMag, $ville, $adresse, $codePostal, $numMag, $mailMag, $latitude, $longitude, $idGerant, $imgSrc);
 
 if ($req->execute()) {
     header('Location: ../ajouterMagForm.php?succes=1');

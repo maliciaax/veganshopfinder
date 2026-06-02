@@ -37,7 +37,6 @@ session_start();
                     <input type="email" name="mailMag"   placeholder="E-mail du magasin"         required aria-required="true">
                     <input type="text"  name="latitude"  placeholder="Latitude  (ex: 43.29)"    required aria-required="true">
                     <input type="text"  name="longitude" placeholder="Longitude (ex: 5.38)"     required aria-required="true">
-                    <input type="text"  name="altitude"  placeholder="Altitude  (ex: 0)"        required aria-required="true">
                     <input type="text"  name="imgSrc"    placeholder="Nom image (ex: mag.jpg)"  required aria-required="true">
                     <button class="boutonLogin" type="submit">Ajouter le magasin</button>
                 </div>
