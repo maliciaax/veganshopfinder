@@ -216,7 +216,8 @@ nav a:focus-visible {
 }
 
 .imgMag {
-    width: 250px; height: 170px;
+    width: 250px; 
+    height: 170px;
     object-fit: cover; border-radius: 8px; display: block;
 }
 

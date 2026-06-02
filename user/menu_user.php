@@ -3,7 +3,7 @@
     <ul class="navlink">
         <li><a href="/peguy/appliVegan/index.php">Accueil</a></li>
         <li><a href="/peguy/appliVegan/magasin.php">Magasins</a></li>
-        <li><a href="/peguy/appliVegan/contact.php">Contact</a></li>
+        <li><a href="/peguy/appliVegan/contact.php">Nous Contacter</a></li>
         <li><a href="/peguy/appliVegan/user/profilUser.php" class="boutonLogin">Mon profil</a></li>
         <li><a href="/peguy/appliVegan/php/deconnexion.php" class="boutonLogin">Se déconnecter</a></li>
     </ul>
