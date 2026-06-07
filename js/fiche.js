@@ -7,7 +7,7 @@ function etoiles(note, grand = false) {
     return `<span class="etoiles" style="${size}" aria-label="Note ${n.toFixed(1)} sur 5">${html} <small>(${n.toFixed(1)}/5)</small></span>`;
 }
 
-fetch('http://localhost/peguy/appliVegan/php/getFicheMagasin.php?idMag=' + idMag)
+fetch('/appliVegan/php/getFicheMagasin.php?idMag=' + idMag)
     .then(res => res.json())
     .then(mag => {
         if (!mag) {
@@ -37,10 +37,12 @@ fetch('http://localhost/peguy/appliVegan/php/getFicheMagasin.php?idMag=' + idMag
             htmlCommentaires = '<p style="color:#aaa">Aucun avis pour ce magasin.</p>';
         }
 
-        const boutonNoter = estConnecte
-            ? `<a href="noter.php?idMag=${mag.idMag}" class="boutonLogin" aria-label="Noter ${mag.nomMag}">⭐ Laisser un avis</a>`
-            : `<a href="connexionUtilisateur-Form.php" class="boutonLogin">Connectez-vous pour noter</a>`;
-
+        let boutonNoter = '';
+        if (estConnecte && role === 'client') {
+            boutonNoter = `<a href="noter.php?idMag=${mag.idMag}" class="boutonLogin" aria-label="Noter ${mag.nomMag}">⭐ Laisser un avis</a>`;
+        } else if (!estConnecte) {
+            boutonNoter = `<a href="connexionUtilisateur-Form.php" class="boutonLogin">Connectez-vous pour noter</a>`;
+        }
         document.getElementById('fiche-contenu').innerHTML = `
             <div class="fiche-hero">
                 <img src="img/${mag.imgSrc}" alt="Photo de ${mag.nomMag}" class="fiche-img">

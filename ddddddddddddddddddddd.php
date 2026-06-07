@@ -36,11 +36,12 @@
             <button class="boutonLogin" data-filtre="pst">PST</button>
             <button class="boutonLogin" data-filtre="seitan">Seitan</button>
             <button class="boutonLogin" data-filtre="soja">Soja</button>
+            <button class="boutonLogin" data-filtre="legumeBio">Légumes bios</button>
         </div>
 
         <div>
             <label for="recherche" class="sr-only">Rechercher un magasin</label>
-            <input type="search" id="recherche" name="recherche" placeholder="🔍 Rechercher un magasin" aria-label="Rechercher un magasin">
+            <input type="search" id="recherche" placeholder="🔍 Rechercher un magasin" aria-label="Rechercher un magasin">
         </div>
     </div>
 

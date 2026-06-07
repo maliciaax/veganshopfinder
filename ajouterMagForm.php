@@ -12,6 +12,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/form.css">
+    <link rel="icon" href="img/logo1.png" type="image/x-icon">
     <title>VeganShopFinder | Ajouter un magasin</title>
 </head>
 <body>

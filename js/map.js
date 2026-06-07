@@ -23,7 +23,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-fetch('http://localhost/peguy/appliVegan/php/map.php')
+fetch('/appliVegan/php/map.php')
     .then(res => res.json())
     .then(magasins => {
         magasins.forEach(magasin => {

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/fiche.css">
+    <link rel="icon" href="img/logo1.png" type="image/x-icon">
     <title>VeganShopFinder | Fiche magasin</title>
 </head>
 <body>
@@ -28,6 +29,7 @@
 
     <script>
         const estConnecte = <?= isset($_SESSION['id']) ? 'true' : 'false' ?>;
+        const role = "<?= $_SESSION['role'] ?? '' ?>";
         const idMag = <?= $idMag ?>;
     </script>
     <script src="js/fiche.js"></script>

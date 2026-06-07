@@ -79,7 +79,7 @@ function afficherMagasin(magasins) {
 }
 
 function listerMagasins() {
-    fetch('http://localhost/peguy/appliVegan/php/lister.php')
+    fetch('/appliVegan/php/lister.php')
         .then(res => res.json())
         .then(magasins => afficherMagasin(magasins))
         .catch(() => document.getElementById("magasinsListe").innerHTML = "<p style='color:#aaa'>Impossible de charger les magasins.</p>");
@@ -98,7 +98,7 @@ if (document.getElementById("filtre")) {
 }
 
 function filtrerProduit(value) {
-    fetch('http://localhost/peguy/appliVegan/php/filtrerProduit.php?filtre=' + value)
+    fetch('/appliVegan/php/filtrerProduit.php?filtre=' + value)
         .then(res => res.json())
         .then(magasins => 
             afficherMagasin(magasins)
@@ -123,7 +123,7 @@ if (document.getElementById("selecteurVille")) {
 }
 
 function filtrerVille(value) {
-    fetch('http://localhost/peguy/appliVegan/php/filtrerVille.php?selecteurVille=' + value)
+    fetch('/appliVegan/php/filtrerVille.php?selecteurVille=' + value)
         .then(res => res.json())
         .then(magasins => 
             afficherMagasin(magasins)
@@ -133,7 +133,7 @@ function filtrerVille(value) {
 if (document.getElementById("recherche")) {
     document.getElementById("recherche").addEventListener("input", function () {
         const value = this.value.trim() || 'noSearch';
-        fetch('http://localhost/peguy/appliVegan/php/rechercher.php?recherche=' + encodeURIComponent(value))
+        fetch('/appliVegan/php/rechercher.php?recherche=' + encodeURIComponent(value))
             .then(res => res.json())
             .then(magasins => { 
                 if (magasins){
