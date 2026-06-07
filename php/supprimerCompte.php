@@ -28,4 +28,3 @@ session_start();
         header('Location: ../user/profilUser.php?erreur=suppression');
     }
     exit();
-?>

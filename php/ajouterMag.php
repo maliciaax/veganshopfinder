@@ -1,12 +1,14 @@
 <?php
     session_start();
     include('session_check.php');
+    //déconnexion si ce n'est pas un gérant (connaitre l'url)
     if (!isset($_SESSION['id']) || $_SESSION['role'] !== 'gerant') {
-        header('Location: ../connexionUtilisateur-Form.php'); exit();
+        header('Location: ../connexionUtilisateur-Form.php');
+        exit();
     }
     include('./connexion.php');
 
-    $nomMag    = trim($_POST["nomMag"] ?? '');
+    $nomMag    = trim($_POST["nomMag"] ?? ''); //trim = suppriemr les espaces
     $ville     = trim($_POST["ville"] ?? '');
     $adresse   = trim($_POST["adresse"] ?? '');
     $codePostal= trim($_POST["codePostal"] ?? '');

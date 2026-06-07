@@ -19,7 +19,7 @@
         exit();
     }
 
-    // Téléphone (10 chiffres, commence par 0)
+    //vérifier le bon format du téléphone
     if (!preg_match('/^0[0-9]{9}$/', $tel)) {
         header('Location: ../creerCompteUtilisateur-Form.php?erreur=tel');
         exit();
