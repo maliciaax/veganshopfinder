@@ -6,10 +6,10 @@
     $host = "localhost";
     $bdd = "veganshopfinder";*/
 
-    $user = "c28malx";
-    $mdp = "ovZa!caUG5MR";
-    $host = "192.168.10.5";
-    $bdd = "c28malx";
+    $user = "user";
+    $mdp = "mpd";
+    $host = "host";
+    $bdd = "bdd";
 
     $conn = new mysqli($host,$user,$mdp,$bdd);
 
